@@ -31,9 +31,33 @@ public class PracticaBucles {
      *   Utiliza solo bucles while
      */
     public void generarNumeros(int n)   {
-        while(){
-
+        int numsGenerados = 0;
+        int sumaMedia = 0;
+        int sumaImpares = 0;
+        int max = 0;
+        System.out.println("\nNº maximo de aleatorios a generar " + n + "\n" + 
+            "o hasta que salga el 0\n");
+        int aleatorio = generador.nextInt(6001) + (-1000);
+        while(numsGenerados < n || aleatorio == 0){
+            int contador = 0;
+            while(contador < 5 && numsGenerados != n){
+                aleatorio = generador.nextInt(6001) + (-1000);
+                sumaMedia = sumaMedia + aleatorio + obtenerNumeroSinCeros(aleatorio);
+                System.out.printf("%12d:%5d",aleatorio,obtenerNumeroSinCeros(aleatorio));
+                if(esImpar(aleatorio) || esImpar(obtenerNumeroSinCeros(aleatorio))){
+                    sumaImpares = sumaImpares + aleatorio + obtenerNumeroSinCeros(aleatorio);
+                }
+                if(esImpar(aleatorio) == false){
+                    max = Math.max(max,aleatorio);
+                }
+                contador++;
+                numsGenerados++;
+            }
+            System.out.println();
         }
+        double media = sumaMedia / (n * 2);
+        System.out.printf("\n%25s%10.2f\n%25s%10d\n%25s%10d","Media:",media,
+            "Suma impares:",sumaImpares,"Maximo pares:",max);
     }
 
     /**
@@ -54,9 +78,20 @@ public class PracticaBucles {
      *   
      */
     public int obtenerNumeroSinCeros(int numero)   {
-        //TODO
-
-        return 0;
+        int num = 0;
+        int exp = 0;
+        while(numero != 0){
+            int cifra = numero % 10;
+            if(cifra == 0){
+                numero /= 10;
+            }
+            else{
+                num = num + (int)Math.pow(10,exp) * cifra;
+                numero /= 10;
+                exp++;
+            }
+        }
+        return num;
     }
 
     /**
@@ -78,8 +113,6 @@ public class PracticaBucles {
      *   
      */
     public void escribirLetraN(int altura)    {
-        //TODO
-
     }
 
     /**
@@ -87,7 +120,6 @@ public class PracticaBucles {
      *  con bucles for
      */
     private void escribirCaracter(char caracter, int n)    {
-        //TODO
 
     }
 }

@@ -24,11 +24,18 @@ public class TestPracticaBucles
      *  
      */
     public static void main(String[] args)    {
-        //TODO
+        Scanner s = new Scanner(System.in);
+        PracticaBucles pb = new PracticaBucles();
+        System.out.print("Introduce cuantos numeros aleatorios quieres generar: ");
+        int numero = s.nextInt();
+        while(numero < 0){
+            System.out.print("Introduce cuantos numeros aleatorios quieres generar: ");
+            numero = s.nextInt();
+        }
+        pb.generarNumeros(numero);
         
-        
-        
-        
+        Utilidades.hacerPausa();
+        Utilidades.borrarPantalla();
     }
 }
 
