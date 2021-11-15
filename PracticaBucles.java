@@ -31,8 +31,9 @@ public class PracticaBucles {
      *   Utiliza solo bucles while
      */
     public void generarNumeros(int n)   {
-       //TODO
+        while(){
 
+        }
     }
 
     /**
@@ -40,10 +41,7 @@ public class PracticaBucles {
      *  Hazlo sin utilizar if
      */
     public boolean esImpar(int numero)   {
-        //TODO
-        
-        
-        return  false;
+        return numero % 2 != 0;
     }
 
     /**
@@ -57,8 +55,7 @@ public class PracticaBucles {
      */
     public int obtenerNumeroSinCeros(int numero)   {
         //TODO
-        
-        
+
         return 0;
     }
 
@@ -81,7 +78,7 @@ public class PracticaBucles {
      *   
      */
     public void escribirLetraN(int altura)    {
-       //TODO
+        //TODO
 
     }
 
@@ -90,11 +87,7 @@ public class PracticaBucles {
      *  con bucles for
      */
     private void escribirCaracter(char caracter, int n)    {
-       //TODO
-       
-       
-       
-       
-    }
+        //TODO
 
+    }
 }
